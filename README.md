@@ -10,6 +10,15 @@ Tech Stack used:
     HTML
 
     CSS
+    
+    
+## Live
+https://swiggy-clone-pro.netlify.app/
+
+## Certification 
+
+[masai_certification.pdf](https://github.com/sarikasingh30/Swiggy_Clone/files/8571662/masai_certification.pdf)
+
 
 ## Reference Images 
 
@@ -18,8 +27,6 @@ Tech Stack used:
   
 ![Screenshot (250)](https://user-images.githubusercontent.com/97461783/165510672-6c244951-9f18-4f6e-b0c3-1676a0f93a60.png)
 
-## Certification 
 
-[masai_certification.pdf](https://github.com/sarikasingh30/Swiggy_Clone/files/8571662/masai_certification.pdf)
 
 
