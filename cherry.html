@@ -1,0 +1,481 @@
+<html>
+
+<head>
+  <title>Cherry</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/riteshf/files/main/logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+  <style>
+    .body {
+      font-family: "proxima-nova", sans-serif;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .navbar {
+      max-height: 80px;
+      background-color: white;
+      padding: 20px;
+    }
+
+    .container {
+      position: relative;
+      min-width: 1200px;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+    }
+
+    .logo {
+      height: 40px;
+      width: 40px;
+    }
+
+    .location {
+      display: flex;
+      margin-left: 30px;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .city {
+      color: #3d4152;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .underline_pune {
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      margin-top: 5px;
+      background-color: #3d4152;
+    }
+
+    .city:hover {
+      color: orange;
+    }
+
+    .underline_pune:hover {
+      background-color: orange;
+    }
+
+    .state {
+      margin-left: 7px;
+      margin-bottom: 3px;
+      font-weight: 200;
+      width: 200px;
+    }
+
+    .navbar-options {
+      display: flex;
+      flex-direction: row-reverse;
+      width: 100%;
+    }
+
+    .navbar-option {
+      display: flex;
+      align-items: center;
+      margin-left: 60px;
+      cursor: pointer;
+      max-width: 200px;
+      color: #3d4152;
+    }
+
+    .navbar-option:hover {
+      color: orange;
+    }
+
+    .offers {
+      background-color: #171a29;
+      height: 340px;
+      width: 100%;
+    }
+
+    .offer {
+      width: 260px;
+      height: 260px;
+      padding: 30px;
+      cursor: pointer;
+    }
+
+    .offer:hover {
+      transform: scale(1.05);
+    }
+
+    .restaurants-header {
+      margin-top: 60px;
+      display: flex;
+      
+    }
+
+    .restaurant-count {
+      display: flex;
+  
+    }
+
+    .restaurant-filter-options {
+      display: flex;
+      flex-direction: row-reverse;
+      margin-left: auto;
+    }
+
+    .restaurant-filter-option {
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+      max-width: 200px;
+      color: #3d4152;
+    }
+
+    .restaurant-filter-option:hover {
+      text-decoration: underline;
+      text-decoration-color: aqua;
+      color: #d4ee77;
+    }
+
+    .restaurant-count {
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .divider {
+      margin-top: 10px;
+      border-top: 1px solid #e9e9e9;
+      height: 1px;
+      width: 100%;
+    }
+
+    .restaurants {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .restaurant {
+      width: 254px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      padding: 10px;
+
+      cursor: pointer;
+
+    }
+
+    .restaurant:hover {
+      box-shadow: 0 2px 4px 0 rgb(48, 56, 97);
+      border: 0.2px solid rgb(211, 207, 207);
+    }
+
+    .restaurant-image {
+      width: 254px;
+      height: 160px;
+    }
+
+    .restaurant-name {
+      margin-top: 14px;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .restaurant-dishes {
+      font-size: 13px;
+      margin-top: 5px;
+      font-weight: 300;
+    }
+
+    .restaurant-info {
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .restaurant-ratings {
+      background-color: #48c479;
+      color: white;
+      padding: 2px 5px 2px 0;
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+
+    .star-icon {
+      transform: scale(0.7);
+    }
+
+    .restaurant-delivery-time {
+      color: #686b78;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .restaurant-cost-for-two {
+      color: #686b78;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .restaurant-discount {
+      padding-top: 14px;
+      padding-bottom: 14px;
+      display: flex;
+      align-items: center;
+      color: #8a584b;
+    }
+
+    .restaurant-discount-text {
+      padding-left: 10px;
+    }
+  </style>
+</head>
+
+<body class="body">
+  <div class="navbar">
+    <div class="container">
+      <img class="logo" src="data:image/png;base64,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" />
+      <div class="location">
+        <div class="city">
+          <b>Pune</b>
+          <div class="underline_pune"></div>
+        </div>
+        <div class="state">Maharashtra, India</div>
+      </div>
+      <div class="navbar-options">
+        <div class="navbar-option">
+          <span class="material-icons"> shopping_bag</span>
+          Cart
+        </div>
+        <div class="navbar-option">
+          <span class="material-icons"> person</span>
+          Sign In
+        </div>
+        <div class="navbar-option">
+          <span class="material-icons"> support</span>
+          Help
+        </div>
+        <div class="navbar-option">
+          <span class="material-icons"> search</span>
+          Search
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="offers">
+    <div class="container">
+      <img class="offer" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/SouthIndian_a5ivgy" />
+      <img class="offer" src="https://imgmedia.lbb.in/media/2020/02/5e58fb96227dbe1b8e53ada4_1582889878493.png" />
+      <img class="offer" src="https://cdna.artstation.com/p/assets/covers/images/019/003/202/large/ankit-kashyap-vegetable-wrap.jpg?1561580944" />
+      <img class="offer" src="https://cdna.artstation.com/p/assets/images/images/019/003/012/large/ankit-kashyap-veg-noodles-machurian-cold-coffee.jpg?1561580368" />
+    </div>
+  </div>
+  <div class="container">
+    <div class="restaurants-header">
+      <div class="container">
+        <div class="restaurant-count">50 restaurants</div>
+        <div class="restaurant-filter-options">
+          <div class="restaurant-filter-option">Cost High to Low</div>
+          <div class="restaurant-filter-option">Cost Low to High</div>
+          <div class="restaurant-filter-option">Ratings</div>
+          <div class="restaurant-filter-option">Delivery </div>
+          <div class="restaurant-filter-option">Time </div>
+          <div class="restaurant-filter-option">Relevance</div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="container divider ">
+      <div class="restaurants">
+        <div class="restaurant">
+          <div>
+            <img class="restaurant-image" src="https://raw.githubusercontent.com/riteshf/files/main/restaurant1.jpeg" />
+            <div class="restaurant-name">Chaitanya Parathas</div>
+            <div class="restaurant-dishes">
+              North India, Punjabi, Chinese, Thalis, Combo
+            </div>
+          </div>
+          <div class="restaurant-info">
+            <div class="restaurant-ratings">
+              <span class="material-icons star-icon"> star </span>
+              4.3
+            </div>
+            .
+            <div class="restaurant-delivery-time">33 mins</div>
+            .
+            <div class="restaurant-cost-for-two">₹200 for two</div>
+          </div>
+          <div class="restaurant-discount divider">
+            <span class="material-icons"> local_offer </span>
+            <div class="restaurant-discount-text">20% off | use TRYNEW</div>
+          </div>
+        </div>
+        <div class="restaurant">
+          <div>
+            <img class="restaurant-image" src="https://raw.githubusercontent.com/riteshf/files/main/restaurant2.jpeg" />
+            <div class="restaurant-name">MH 12 Pav Bhaji</div>
+            <div class="restaurant-dishes">
+              Snacks, Pizza, Beverages, Street Food
+            </div>
+          </div>
+          <div class="restaurant-info">
+            <div class="restaurant-ratings">
+              <span class="material-icons star-icon"> star </span>
+              4.8
+            </div>
+            .
+            <div class="restaurant-delivery-time">25 mins</div>
+            .
+            <div class="restaurant-cost-for-two">₹250 for two</div>
+          </div>
+          <div class="restaurant-discount divider">
+            <span class="material-icons"> local_offer </span>
+            <div class="restaurant-discount-text">10% off | use TRYNEW</div>
+          </div>
+        </div>
+        <div class="restaurant">
+          <div>
+            <img class="restaurant-image" src="https://raw.githubusercontent.com/riteshf/files/main/restaurant3.jpeg" />
+            <div class="restaurant-name">Lunch Box</div>
+            <div class="restaurant-dishes">
+              North India, Punjabi Combo, Biryani, Healthy Food, Jain, Thalis
+            </div>
+          </div>
+          <div class="restaurant-info">
+            <div class="restaurant-ratings">
+              <span class="material-icons star-icon"> star </span>
+              4.2
+            </div>
+            .
+            <div class="restaurant-delivery-time">31 mins</div>
+            .
+            <div class="restaurant-cost-for-two">₹200 for two</div>
+          </div>
+          <div class="restaurant-discount divider">
+            <span class="material-icons"> local_offer </span>
+            <div class="restaurant-discount-text">20% off | use TRYNEW</div>
+          </div>
+        </div>
+        <div class="restaurant">
+          <div>
+            <img class="restaurant-image" src="https://raw.githubusercontent.com/riteshf/files/main/restaurant4.jpeg" />
+            <div class="restaurant-name">The Hungry Hippe</div>
+            <div class="restaurant-dishes">
+              Chinese, Italian, Thai
+            </div>
+          </div>
+          <div class="restaurant-info">
+            <div class="restaurant-ratings">
+              <span class="material-icons star-icon"> star </span>
+              2.0
+            </div>
+            .
+            <div class="restaurant-delivery-time">38 mins</div>
+            .
+            <div class="restaurant-cost-for-two">₹500 for two</div>
+          </div>
+          <div class="restaurant-discount divider">
+            <span class="material-icons"> local_offer </span>
+            <div class="restaurant-discount-text">40% off | use TRYNEW</div>
+          </div>
+        </div>
+        <div class="restaurant">
+          <div>
+            <img class="restaurant-image" src="https://raw.githubusercontent.com/riteshf/files/main/restaurant5.jpeg" />
+            <div class="restaurant-name">Ovenstory Pizzas</div>
+            <div class="restaurant-dishes">
+              Pizaas
+            </div>
+          </div>
+          <div class="restaurant-info">
+            <div class="restaurant-ratings">
+              <span class="material-icons star-icon"> star </span>
+              4.4
+            </div>
+            .
+            <div class="restaurant-delivery-time">45 mins</div>
+            .
+            <div class="restaurant-cost-for-two">₹600 for two</div>
+          </div>
+          <div class="restaurant-discount divider">
+            <span class="material-icons"> local_offer </span>
+            <div class="restaurant-discount-text">10% off | use TRYNEW</div>
+          </div>
+        </div>
+        <div class="restaurant">
+          <div>
+            <img class="restaurant-image" src="https://raw.githubusercontent.com/riteshf/files/main/restaurant6.jpeg" />
+            <div class="restaurant-name">Starbucks Coffee</div>
+            <div class="restaurant-dishes">
+              Beverages, Icecreams
+            </div>
+          </div>
+          <div class="restaurant-info">
+            <div class="restaurant-ratings">
+              <span class="material-icons star-icon"> star </span>
+              4.3
+            </div>
+            .
+            <div class="restaurant-delivery-time">38 mins</div>
+            .
+            <div class="restaurant-cost-for-two">₹400 for two</div>
+          </div>
+          <div class="restaurant-discount divider">
+            <span class="material-icons"> local_offer </span>
+            <div class="restaurant-discount-text">20% off | use TRYNEW</div>
+          </div>
+          
+        </div>
+        <div class="restaurant">
+          <div>
+            <img class="restaurant-image" src="https://raw.githubusercontent.com/riteshf/files/main/restaurant1.jpeg" />
+            <div class="restaurant-name">Lazeez Parathas</div>
+            <div class="restaurant-dishes">
+              Parathas, Cottage Cheese, Choles
+            </div>
+          </div>
+          <div class="restaurant-info">
+            <div class="restaurant-ratings">
+              <span class="material-icons star-icon"> star </span>
+              4.6
+            </div>
+            .
+            <div class="restaurant-delivery-time">30 mins</div>
+            .
+            <div class="restaurant-cost-for-two">₹350 for two</div>
+          </div>
+          <div class="restaurant-discount divider">
+            <span class="material-icons"> local_offer </span>
+            <div class="restaurant-discount-text">40% off | use TRYNEW</div>
+          </div>
+      </div>
+      <div class="restaurant">
+        <div>
+          <img class="restaurant-image" src="https://raw.githubusercontent.com/riteshf/files/main/restaurant7.jpeg" />
+          <div class="restaurant-name">Yummy In Tummy</div>
+          <div class="restaurant-dishes">
+            Chicken, Mutten,Non-Veg
+          </div>
+        </div>
+        <div class="restaurant-info">
+          <div class="restaurant-ratings">
+            <span class="material-icons star-icon"> star </span>
+            4.9
+          </div>
+          .
+          <div class="restaurant-delivery-time">38 mins</div>
+          .
+          <div class="restaurant-cost-for-two">₹450 for two</div>
+        </div>
+        <div class="restaurant-discount divider">
+          <span class="material-icons"> local_offer </span>
+          <div class="restaurant-discount-text">30% off | use TRYNEW</div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
